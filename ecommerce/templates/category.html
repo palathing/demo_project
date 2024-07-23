@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<center>
+<div class="container">
+<img src="{% static 'images/banner.png' %}" height="200px" width="1300px">
+</div>
+
+
+<div>
+    <h5>Our Collections</h5>
+</div>
+
+<div>
+    <p>Offerings such as the largest in-season product catalogue, 100% authentic products, cash on delivery and 30 day
+        return policy make Myntra, the preferred shopping destination in the country. To make online shopping easier for you,
+        a dedicated customer connect team is on standby to answer your queries 24x7.</p>
+</div>
+</center>
+
+<!-- cards -->
+
+<div class="container mt-3">
+  <div class="row">
+    {% for i in item %}
+      <div class="col-4 mt-4">
+        <div class="card" style="width: 18rem;">
+          <img src="{{i.cimage.url}}" class="card-img-top" height="250px" width="150px" alt="..." >
+          <div class="card-body">
+            <center>
+              <h5 class="card-title">{{i.cname}}</h5>
+              <p class="card-text">{{i.cdesc}}</p>
+              <a href="{% url 'shop:products' i.id %}" class="btn btn-primary">Shop Now</a>
+            </center>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

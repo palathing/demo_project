@@ -1,0 +1,25 @@
+body
+{
+background-color:#8aebdb;
+}
+
+
+
+.navbar-light
+{
+font-weight:bold;
+font-size:20px;
+color:#BC0A0C;
+background-color:#add9d2;
+}
+
+.bglight
+{
+background-color:gray !important;
+}
+
+.card
+{
+background-color:none;
+}
+

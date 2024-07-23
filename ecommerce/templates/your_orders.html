@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+<!--    <h5>Order Details</h5>-->
+    <div class="container">
+        <h4 class="text-center fw-bold">{{u}}'s Orders</h4>
+        {% for i in customer %}
+        <div class="row" style="margin-top:100px">
+
+            <div class="col-5 p-4">
+                <img src="{{i.product.image.url }}" width="200px" height="200px">
+            </div>
+            <div class="col-5 p-4" style="align-item:center;">
+<!--                <hr class="w-25 border border-2 border-dark mx-auto">-->
+                <h5>{{i.product.name}}</h5>
+                <h5><b>₹:</b>{{i.product.price}}</h5>
+<!--                <h5><b>Address:</b>{{i.address}}</h5>-->
+<!--                <h5><b>Contact:</b>{{i.phone}}</h5>-->
+<!--                <h5><b>No. of Items:</b>{{i.no_of_items}}</h5>-->
+                <h5>{{i.orderd_date}}</h5>
+                <h5><b>Status:</b>{{i.delivery_status}}</h5>
+
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<br>
+
+<div class="row">
+  <img src="{{ c.cimage.url }}" height="900px;" width="100px;">
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="text-center fw-bold">{{c.cname}}</h1>
+      <p>{{c.cdesc}}</p>
+    </div>
+  </div>
+</div>
+
+
+<div class="container mt-3">
+  <div class="row">
+    {% for i in p %}
+      <div class="col-4 mt-4">
+        <div class="card" style="width: 18rem;">
+          <a href="{% url 'shop:product_details' i.id %}">
+            <img src="{{i.image.url}}" class="card-img-top" height="250px" width="150px" alt="..." ></a>
+          <div class="card-body">
+            <center>
+              <h5 class="card-title">{{i.name}}</h5>
+              <p class="card-text">{{i.price}}</p>
+              <a href="{% url 'shop:product_details' i.id %}" class="btn btn-primary">Shop Now</a>
+            </center>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}
